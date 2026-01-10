@@ -1,19 +1,24 @@
 body {
-    background-color: #000;
-    color: #0f0;
-    font-family: 'Courier New', monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+  background: #000;
+  color: #0f0; /* Зеленый неон */
+  font-family: 'Courier New', monospace;
+  padding: 20px;
 }
-button {
-    background-color: #0f0;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
+
+section {
+  border: 1px solid #0f0;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 0 0 10px #0f0; /* Свечение блоков */
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  text-shadow: 0 0 5px #0f0;
+}
+
+li:hover {
+  background: #0f0;
+  color: #000; /* Инверсия при наведении */
+  cursor: pointer;
 }
