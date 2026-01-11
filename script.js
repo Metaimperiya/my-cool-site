@@ -416,4 +416,4 @@ window.CyberSystem = {
 };
 
 // Инициализация отслеживания прогресса
-initProgressTracking();
+initProgressTracking(); 
