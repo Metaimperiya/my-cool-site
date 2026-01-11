@@ -1,45 +1,62 @@
 // ОСНОВНЫЕ СКРИПТЫ
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     console.log('SMM сайт загружен');
-    
-    // Плавная прокрутка
+
+    /* ===============================
+       ПЛАВНАЯ ПРОКРУТКА
+    =============================== */
     document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
+        link.addEventListener('click', e => {
+            const targetId = link.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+
             const target = document.querySelector(targetId);
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
+            if (!target) return;
+
+            e.preventDefault();
+
+            const yOffset = -80;
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+            });
         });
     });
-    
-    // Обновление года в подвале
-    const year = new Date().getFullYear();
-    document.querySelector('.copyright').textContent = 
-        document.querySelector('.copyright').textContent.replace('2024', year);
-    
-    // Обновление системной информации
+
+    /* ===============================
+       АВТОГОД В ПОДВАЛЕ (БЕЗ КРАША)
+    =============================== */
+    const copyright = document.querySelector('.copyright');
+    if (copyright) {
+        const year = new Date().getFullYear();
+        copyright.textContent = copyright.textContent.replace(/\d{4}/, year);
+    }
+
+    /* ===============================
+       СИСТЕМНАЯ ИНФА (БЕЗ КРАША)
+    =============================== */
+    const systemInfo = document.querySelector('.system-info');
+
     function updateSystemInfo() {
+        if (!systemInfo) return;
+
         const time = new Date().toLocaleTimeString('ru-RU', {
             hour: '2-digit',
             minute: '2-digit'
         });
+
         const load = Math.floor(Math.random() * 30) + 70;
-        
-        document.querySelector('.system-info').innerHTML = `
+
+        systemInfo.innerHTML = `
             <span>[TIME: ${time}]</span>
             <span>[LOAD: ${load}%]</span>
             <span>[VERSION: 2.4.1]</span>
         `;
     }
-    
+
     updateSystemInfo();
     setInterval(updateSystemInfo, 60000);
 });
