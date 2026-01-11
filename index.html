@@ -7,14 +7,18 @@
     
     <!-- SEO метатеги -->
     <meta name="description" content="Полное руководство по SMM и Digital Marketing: 160 параграфов, 12 блоков, реклама, SEO, автоматизация, AI, безопасность и масштабирование. Книга для начинающих и профессионалов.">
+    <meta name="keywords" content="SMM, Digital Marketing, социальные сети, реклама, SEO, маркетинг, продвижение, контент-маркетинг">
     <meta name="author" content="Анатолий Буйкевич">
     
     <!-- Open Graph -->
     <meta property="og:title" content="SMM и Digital Marketing — полное руководство от основ до экспертизы">
-    <meta property="og:description" content="160 параграфов полного руководства">
+    <meta property="og:description" content="160 параграфов полного руководства по SMM и Digital Marketing">
     <meta property="og:type" content="book">
     <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://example.com">
+    <meta property="og:url" content="https://smm-digital.ru">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://smm-digital.ru">
     
     <!-- Подключение CSS файлов -->
     <link rel="stylesheet" href="css/style.css">
@@ -26,6 +30,7 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
     <!-- Фон -->
@@ -35,7 +40,6 @@
     <header class="cyber-header">
         <div class="container">
             <div class="logo" itemscope itemtype="https://schema.org/Book">
-
                 <div itemprop="author" itemscope itemtype="https://schema.org/Person">
                    <meta itemprop="name" content="Анатолий Буйкевич">
                 </div>
@@ -43,12 +47,12 @@
                 <meta itemprop="bookEdition" content="Cyberpunk Edition 2.4.1">
                 <meta itemprop="inLanguage" content="ru">
                 <meta itemprop="datePublished" content="2024-01-01">
-
-                <!-- ВОТ ОНО, СУКА, ТУТ -->
-                <meta itemprop="mainEntityOfPage" content="https://example.com">
-
+                <meta itemprop="mainEntityOfPage" content="https://smm-digital.ru">
+                <meta itemprop="bookFormat" content="https://schema.org/EBook">
+                
                 <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                    <meta itemprop="name" content="SMM & Digital Marketing Guide">
+                   <meta itemprop="url" content="https://smm-digital.ru">
                 </div>
 
                 <h1 class="neon-text" itemprop="name">
@@ -59,9 +63,7 @@
                    Практическое руководство по SMM, рекламе, SEO и автоматизации • CYBERPUNK EDITION v2.4.1
                 </p>
 
-            </div>
-
-                <nav class="main-nav">
+                <nav class="main-nav" aria-label="Основная навигация">
                     <ul>
                         <li><a href="#start" class="nav-link">ГЛАВНАЯ</a></li>
                         <li><a href="#structure" class="nav-link">СТРУКТУРА</a></li>
@@ -591,16 +593,16 @@
     </main>
 
     <!-- Подвал сайта -->
-    <footer class="cyber-footer">
+    <footer id="contact" class="cyber-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>СИСТЕМНАЯ ИНФОРМАЦИЯ</h3>
                     <ul>
-                        <li><a href="#">О проекте</a></li>
-                        <li><a href="#">Авторы</a></li>
-                        <li><a href="#">Обновления</a></li>
-                        <li><a href="#">Roadmap</a></li>
+                        <li><a href="#start">О проекте</a></li>
+                        <li><a href="#start">Авторы</a></li>
+                        <li><a href="#start">Обновления</a></li>
+                        <li><a href="#plan">Roadmap</a></li>
                     </ul>
                 </div>
                 
